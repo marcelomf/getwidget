@@ -197,7 +197,7 @@ class _GFMultiSelectState<T> extends State<GFMultiSelect<T>> with AutomaticKeepA
   void initState(){
     if(widget.initialSelectedItemsIndex!=null&&widget.initialSelectedItemsIndex!.isNotEmpty) {
       for (int x in widget.initialSelectedItemsIndex!) {
-        _selectedTitles.add(widget.items[x]);
+        _selectedTitles.add(widget.items[x].child.data);
         _selectedTitlesIndex.add(x);
       }
     }
