@@ -207,12 +207,12 @@ class _GFMultiSelectState<T> extends State<GFMultiSelect<T>> with AutomaticKeepA
   void _onItemSelect(bool selected, int index) {
     if (selected == true) {
       setState(() {
-        _selectedTitles.add(widget.items[index]);
+        _selectedTitles.add(widget.items[index].child.data);
         _selectedTitlesIndex.add(index);
       });
     } else {
       setState(() {
-        _selectedTitles.remove(widget.items[index]);
+        _selectedTitles.remove(widget.items[index].child.data);
         _selectedTitlesIndex.remove(index);
       });
     }
@@ -300,7 +300,7 @@ class _GFMultiSelectState<T> extends State<GFMultiSelect<T>> with AutomaticKeepA
                               widget.items.length,
                               (index) => GFCheckboxListTile(
                                     value: _selectedTitles
-                                        .contains(widget.items[index]),
+                                        .contains(widget.items[index].child.data),
                                     onChanged: (bool selected) {
                                       _controller.text;
                                       _onItemSelect(selected, index);
