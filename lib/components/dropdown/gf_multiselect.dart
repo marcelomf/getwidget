@@ -308,7 +308,7 @@ class _GFMultiSelectState<T> extends State<GFMultiSelect<T>> with AutomaticKeepA
                                     },
                                     selected: widget.selected,
                                     avatar: widget.avatar,
-                                    titleText: widget.items[index],
+                                    titleText: widget.items[index].toString(),
                                     color: widget.color,
                                     padding: widget.padding,
                                     margin: widget.margin,
